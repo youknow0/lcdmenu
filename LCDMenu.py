@@ -20,11 +20,11 @@ class Menu(MenuItem):
 
 	ITEM_PREFIX = "\x7e"
 
-	def Menu(self, lcd, name)
+	def Menu(self, lcd, name):
 		self.name = name
 		self.items = []
 
-	def add_item(self, item)
+	def add_item(self, item):
 		self.items.append(item)
 
 	def _open_menu(self):
