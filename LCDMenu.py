@@ -61,7 +61,7 @@ class Menu(MenuItem):
 		while btnWait:
 				if nothingHappened == 100:
 						lcd.backlight(lcd.OFF)
-						print "Turning backlight off!"
+						print ("Turning backlight off!")
 
 				if lcd.buttonPressed(lcd.DOWN):
 						lcd.backlight(lcd.ON)
