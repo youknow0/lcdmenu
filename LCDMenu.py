@@ -25,6 +25,10 @@ class Menu(MenuItem):
 		self.lcd = lcd
 		self.name = name
 		self.items = []
+
+	def clear_all_items(self):
+		self.items = []
+
 	def set_item_prefix(self, prefix):
 		self.item_prefix = prefix
 
@@ -50,7 +54,7 @@ class Menu(MenuItem):
 					if curpos < (item_count - 1):
 							seconditem = items[curpos + 1]
 					else:
-							seconditem = ""
+							seconditem = MenuItem("", lambda: None)
 			else:
 					firstitem = items[curpos - 1]
 					seconditem = items[curpos]
@@ -83,6 +87,13 @@ class Menu(MenuItem):
 							curpos = (curpos - 1) % item_count
 							btnWait = False
 							sleep(0.1)
+
+					if lcd.buttonPressed(lcd.SELECT):
+							lcd.backlight(lcd.ON)
+							nothingHappened = 0
+							btnWait = False
+							items[curpos].get_action()()
+							
 					sleep(0.1)
 					nothingHappened = nothingHappened + 1
 
