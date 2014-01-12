@@ -3,7 +3,7 @@
 
 class MenuItem:
 
-	def MenuItem(self, name, action):
+	def __init__(self, name, action):
 		self.name = name
 		self.action = action
 
@@ -20,7 +20,7 @@ class Menu(MenuItem):
 
 	ITEM_PREFIX = "\x7e"
 
-	def Menu(self, lcd, name):
+	def __init__(self, lcd, name):
 		self.name = name
 		self.items = []
 
