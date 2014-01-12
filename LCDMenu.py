@@ -21,6 +21,7 @@ class Menu(MenuItem):
 	ITEM_PREFIX = "\x7e"
 
 	def __init__(self, lcd, name):
+		self.lcd = lcd
 		self.name = name
 		self.items = []
 
