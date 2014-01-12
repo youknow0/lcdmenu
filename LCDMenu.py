@@ -19,12 +19,14 @@ class MenuItem:
 
 class Menu(MenuItem):
 
-	ITEM_PREFIX = "\x7e"
+	item_prefix = "\x7e"
 
 	def __init__(self, lcd, name):
 		self.lcd = lcd
 		self.name = name
 		self.items = []
+	def set_item_prefix(self, prefix):
+		self.item_prefix = prefix
 
 	def add_item(self, item):
 		self.items.append(item)
@@ -54,12 +56,12 @@ class Menu(MenuItem):
 					seconditem = items[curpos]
 
 			lcd.clear()
-			lcd.message(self.ITEM_PREFIX)
+			lcd.message(self.item_prefix)
 			lcd.message(firstitem.get_text())
 			lcd.message("\n")
-			lcd.message(self.ITEM_PREFIX)
+			lcd.message(self.item_prefix)
 			lcd.message(seconditem.get_text())
-			lcd.setCursor(len(self.ITEM_PREFIX) - 1, curpos % 2)
+			lcd.setCursor(len(self.item_prefix) - 1, curpos % 2)
 
 			nothingHappened = 0
 			btnWait = True
