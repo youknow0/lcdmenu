@@ -55,7 +55,7 @@ class Menu(MenuItem):
 		lcd.message("\n")
 		lcd.message(self.ITEM_PREFIX)
 		lcd.message(seconditem.get_text())
-		lcd.setCursor(len(ITEM_PREFIX) - 1, curpos % 2)
+		lcd.setCursor(len(self.ITEM_PREFIX) - 1, curpos % 2)
 
 		nothingHappened = 0
 		btnWait = True
