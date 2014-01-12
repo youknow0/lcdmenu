@@ -50,10 +50,10 @@ class Menu(MenuItem):
 				seconditem = items[curpos]
 
 		lcd.clear()
-		lcd.message(ITEM_PREFIX)
+		lcd.message(self.ITEM_PREFIX)
 		lcd.message(firstitem.get_text())
 		lcd.message("\n")
-		lcd.message(ITEM_PREFIX)
+		lcd.message(self.ITEM_PREFIX)
 		lcd.message(seconditem.get_text())
 		lcd.setCursor(len(ITEM_PREFIX) - 1, curpos % 2)
 
